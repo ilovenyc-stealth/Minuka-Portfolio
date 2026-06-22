@@ -7,16 +7,15 @@
 
     <!-- ===== FAVICON ===== -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23007aff'/%3E%3Ctext x='50' y='72' font-family='Inter, sans-serif' font-size='60' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EM%3C/text%3E%3C/svg%3E" />
-    <!-- Fallback favicon for older browsers -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23007aff'/%3E%3Ctext x='50' y='72' font-family='Inter, sans-serif' font-size='60' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EM%3C/text%3E%3C/svg%3E" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!-- Google Fonts: Inter (Apple-like) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
     <style>
         /* ============================================================
-           APPLE-INSPIRED DESIGN SYSTEM
+           APPLE-INSPIRED DESIGN SYSTEM (full, unchanged)
            ============================================================ */
         *,
         *::before,
@@ -27,7 +26,6 @@
         }
 
         :root {
-            /* --- Apple Light Mode --- */
             --bg-primary: #ffffff;
             --bg-secondary: #f5f5f7;
             --bg-card: #ffffff;
@@ -39,7 +37,6 @@
             --text-secondary: #6e6e73;
             --text-muted: #86868b;
 
-            /* Apple Blue (#007AFF) + subtle gradient */
             --accent: #007aff;
             --accent-light: #409cff;
             --accent-gradient: linear-gradient(135deg, #007aff, #5856d6);
@@ -55,7 +52,6 @@
             --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* Dark Mode support (auto) */
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg-primary: #000000;
@@ -63,11 +59,9 @@
                 --bg-card: #1c1c1e;
                 --bg-card-hover: #2c2c2e;
                 --bg-nav: rgba(0, 0, 0, 0.82);
-
                 --text-primary: #f5f5f7;
                 --text-secondary: #a1a1a6;
                 --text-muted: #636366;
-
                 --border-color: #38383a;
                 --shadow-sm: 0 2px 16px rgba(0, 0, 0, 0.4);
                 --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.5);
@@ -78,11 +72,10 @@
         html {
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
@@ -90,19 +83,9 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
 
         .container {
             max-width: 1100px;
@@ -110,22 +93,10 @@
             padding: 0 32px;
         }
 
-        /* ===== SCROLLBAR (light) ===== */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-light);
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
 
-        /* ===== BUTTONS ===== */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -148,10 +119,7 @@
             transform: scale(1.02) translateY(-2px);
             box-shadow: 0 8px 32px rgba(0, 122, 255, 0.45);
         }
-
-        .btn:active {
-            transform: scale(0.98);
-        }
+        .btn:active { transform: scale(0.98); }
 
         .btn-outline {
             background: transparent;
@@ -159,19 +127,14 @@
             color: var(--accent);
             box-shadow: none;
         }
-
         .btn-outline:hover {
             background: var(--accent);
             color: #fff;
             box-shadow: 0 8px 32px rgba(0, 122, 255, 0.35);
         }
 
-        .btn-sm {
-            padding: 10px 22px;
-            font-size: 0.82rem;
-        }
+        .btn-sm { padding: 10px 22px; font-size: 0.82rem; }
 
-        /* ===== SECTION HEADERS ===== */
         .section-header {
             text-align: center;
             margin-bottom: 56px;
@@ -215,7 +178,6 @@
             text-align: center;
         }
 
-        /* ===== NAVIGATION ===== */
         nav {
             position: fixed;
             top: 0;
@@ -225,7 +187,6 @@
             padding: 14px 0;
             background: var(--bg-nav);
             backdrop-filter: blur(20px) saturate(1.8);
-            -webkit-backdrop-filter: blur(20px) saturate(1.8);
             border-bottom: 1px solid var(--border-color);
             transition: var(--transition);
         }
@@ -260,7 +221,6 @@
             transition: var(--transition);
             position: relative;
             cursor: pointer;
-            letter-spacing: -0.01em;
         }
 
         .nav-links a::after {
@@ -279,11 +239,8 @@
         .nav-links a.active {
             color: var(--text-primary);
         }
-
         .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
+        .nav-links a.active::after { width: 100%; }
 
         .hamburger {
             display: none;
@@ -304,39 +261,24 @@
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        /* ===== PAGE CONTAINER ===== */
         .page {
             display: none;
             padding-top: 90px;
             min-height: 100vh;
             animation: fadeIn 0.5s ease;
         }
-
-        .page.active {
-            display: block;
-        }
+        .page.active { display: block; }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ============================================================
-           JUSTIFIED TEXT — Apple-inspired clean justification
-           ============================================================ */
         .text-justify,
         .hero-content p,
         .about-text p,
@@ -347,7 +289,7 @@
             hyphens: auto;
         }
 
-        /* ===== HOME PAGE ===== */
+        /* ===== HERO ===== */
         .hero {
             min-height: 80vh;
             display: flex;
@@ -441,7 +383,6 @@
             font-weight: 400;
         }
 
-        /* Hero Image */
         .hero-image {
             display: flex;
             justify-content: center;
@@ -470,14 +411,12 @@
             overflow: hidden;
         }
 
-        /* Profile picture styling */
         .hero-image .avatar-wrapper .avatar-inner img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Fallback icon (hidden when image loads) */
         .hero-image .avatar-wrapper .avatar-inner .fallback-icon {
             display: none;
             font-size: 7rem;
@@ -510,7 +449,6 @@
             align-items: center;
             gap: 8px;
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             animation: float 4s ease-in-out infinite;
         }
 
@@ -524,7 +462,6 @@
             right: -8%;
             animation-delay: 0.5s;
         }
-
         .hero-image .floating-badge:nth-child(3) {
             bottom: 8%;
             left: -8%;
@@ -532,16 +469,11 @@
         }
 
         @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-14px);
-            }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-14px); }
         }
 
-        /* ===== ABOUT PAGE ===== */
+        /* ===== ABOUT ===== */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -633,7 +565,7 @@
             font-weight: 400;
         }
 
-        /* ===== SKILLS PAGE ===== */
+        /* ===== SKILLS ===== */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -707,7 +639,7 @@
             font-weight: 400;
         }
 
-        /* ===== PROJECTS PAGE ===== */
+        /* ===== PROJECTS ===== */
         .project-filters {
             display: flex;
             justify-content: center;
@@ -781,9 +713,7 @@
             transition: var(--transition);
         }
 
-        .project-card:hover .project-thumb .overlay {
-            opacity: 1;
-        }
+        .project-card:hover .project-thumb .overlay { opacity: 1; }
 
         .project-card .project-body {
             padding: 24px 28px 28px;
@@ -842,7 +772,7 @@
             color: var(--accent);
         }
 
-        /* ===== CONTACT PAGE ===== */
+        /* ===== CONTACT ===== */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -965,42 +895,18 @@
             font-weight: 500;
         }
 
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .hero .container {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-
-            .hero-content p {
-                margin: 0 auto 32px;
-                text-align: justify;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .hero-image .avatar-wrapper {
-                width: 280px;
-                height: 280px;
-            }
-
-            .hero-image .avatar-wrapper .avatar-inner {
-                font-size: 5rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
+            .hero-content p { margin: 0 auto 32px; }
+            .hero-buttons { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .hero-image .avatar-wrapper { width: 280px; height: 280px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .contact-wrapper { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -1019,70 +925,21 @@
                 padding: 40px;
                 transition: var(--transition);
                 backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
             }
-
-            .nav-links.open {
-                right: 0;
-            }
-
-            .nav-links a {
-                font-size: 1.1rem;
-            }
-
-            .hamburger {
-                display: flex;
-                z-index: 1001;
-            }
-
-            .hero-content h1 {
-                font-size: 2.6rem;
-            }
-
-            .hero-image .avatar-wrapper {
-                width: 220px;
-                height: 220px;
-            }
-
-            .hero-image .avatar-wrapper .avatar-inner {
-                font-size: 4rem;
-            }
-
-            .hero-image .floating-badge {
-                display: none;
-            }
-
-            .hero-stats {
-                gap: 28px;
-            }
-
-            .hero-stats .stat h3 {
-                font-size: 1.4rem;
-            }
-
-            .page {
-                padding-top: 80px;
-            }
-
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form {
-                padding: 24px;
-            }
-
-            .about-stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .container {
-                padding: 0 20px;
-            }
+            .nav-links.open { right: 0; }
+            .nav-links a { font-size: 1.1rem; }
+            .hamburger { display: flex; z-index: 1001; }
+            .hero-content h1 { font-size: 2.6rem; }
+            .hero-image .avatar-wrapper { width: 220px; height: 220px; }
+            .hero-image .floating-badge { display: none; }
+            .hero-stats { gap: 28px; }
+            .hero-stats .stat h3 { font-size: 1.4rem; }
+            .page { padding-top: 80px; }
+            .section-header h2 { font-size: 2.2rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .contact-form { padding: 24px; }
+            .about-stats-grid { grid-template-columns: 1fr 1fr; }
+            .container { padding: 0 20px; }
         }
 
         @media (max-width: 480px) {
@@ -1091,23 +948,13 @@
                 gap: 12px;
                 align-items: center;
             }
-
-            .about-stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-filters {
-                gap: 6px;
-            }
-
+            .about-stats-grid { grid-template-columns: 1fr; }
+            .project-filters { gap: 6px; }
             .project-filters button {
                 padding: 6px 16px;
                 font-size: 0.72rem;
             }
-
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
+            .hero-content h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -1134,7 +981,7 @@
 
     <!-- ===== PAGES ===== -->
 
-    <!-- HOME PAGE -->
+    <!-- HOME -->
     <section class="page active" id="page-home">
         <div class="hero">
             <div class="container">
@@ -1168,7 +1015,6 @@
                 <div class="hero-image">
                     <div class="avatar-wrapper">
                         <div class="avatar-inner">
-                            <!-- Profile Picture -->
                             <img
                                 src="https://raw.githubusercontent.com/ilovenyc-stealth/Minuka-Portfolio/main/minuka.jpg"
                                 alt="Minuka Uduwana"
@@ -1188,7 +1034,7 @@
         </div>
     </section>
 
-    <!-- ABOUT PAGE -->
+    <!-- ABOUT -->
     <section class="page" id="page-about">
         <div class="container">
             <div class="section-header">
@@ -1241,7 +1087,7 @@
         </div>
     </section>
 
-    <!-- SKILLS PAGE -->
+    <!-- SKILLS -->
     <section class="page" id="page-skills" style="background: var(--bg-secondary);">
         <div class="container">
             <div class="section-header">
@@ -1255,7 +1101,7 @@
         </div>
     </section>
 
-    <!-- PROJECTS PAGE -->
+    <!-- PROJECTS -->
     <section class="page" id="page-projects">
         <div class="container">
             <div class="section-header">
@@ -1276,7 +1122,7 @@
         </div>
     </section>
 
-    <!-- CONTACT PAGE -->
+    <!-- CONTACT -->
     <section class="page" id="page-contact">
         <div class="container">
             <div class="section-header">
@@ -1313,11 +1159,15 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form"
-                      id="contactForm"
-                      action="https://formspree.io/f/xeebqjlv"
-                      method="POST"
-                >
+
+                <!-- ===== WEB3FORMS CONTACT FORM (KEY UPDATED) ===== -->
+                <form class="contact-form" id="contactForm" method="POST">
+                    <!-- Web3Forms access key -->
+                    <input type="hidden" name="access_key" value="dba6f6d4-1806-4963-ac1e-2a996fee0849" />
+
+                    <!-- Optional: redirect to a thank you page (you can change this later) -->
+                    <input type="hidden" name="redirect" value="https://your-domain.com/thank-you.html" />
+
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required />
@@ -1330,6 +1180,8 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
                     </div>
+                    <!-- Honeypot spam protection (leave empty) -->
+                    <input type="checkbox" name="botcheck" style="display: none;" />
                     <button type="submit" class="btn">
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
@@ -1386,19 +1238,19 @@
         function renderSkills() {
             const grid = document.getElementById('skillsGrid');
             grid.innerHTML = skillsData.map((skill, index) => `
-                    <div class="skill-card">
-                        <div class="skill-header">
-                            <i class="${skill.icon}"></i>
-                            <h4>${skill.name}</h4>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="fill" data-level="${skill.level}" style="width: 0%;"></div>
-                        </div>
-                        <div class="skill-label">
-                            <span>${skill.level}%</span>
-                        </div>
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="${skill.icon}"></i>
+                        <h4>${skill.name}</h4>
                     </div>
-                `).join('');
+                    <div class="skill-bar">
+                        <div class="fill" data-level="${skill.level}" style="width: 0%;"></div>
+                    </div>
+                    <div class="skill-label">
+                        <span>${skill.level}%</span>
+                    </div>
+                </div>
+            `).join('');
 
             setTimeout(() => {
                 document.querySelectorAll('#skillsGrid .skill-bar .fill').forEach(bar => {
@@ -1415,25 +1267,25 @@
                 projectsData.filter(p => p.category === filter);
 
             grid.innerHTML = filtered.map((project, index) => `
-                    <div class="project-card" data-category="${project.category}">
-                        <div class="project-thumb">
-                            <i class="${project.icon}"></i>
-                            <div class="overlay">
-                                <a href="${project.link}" target="_blank" class="btn btn-sm" style="pointer-events: auto;">View Project</a>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <div class="tags">
-                                ${project.tags.map(tag => `<span>${tag}</span>`).join('')}
-                            </div>
-                            <h4>${project.title}</h4>
-                            <p>${project.desc}</p>
-                            <div class="project-links">
-                                <a href="${project.link}" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            </div>
+                <div class="project-card" data-category="${project.category}">
+                    <div class="project-thumb">
+                        <i class="${project.icon}"></i>
+                        <div class="overlay">
+                            <a href="${project.link}" target="_blank" class="btn btn-sm" style="pointer-events: auto;">View Project</a>
                         </div>
                     </div>
-                `).join('') || `<p style="text-align:center;color:var(--text-muted);grid-column:1/-1;">No projects in this category yet.</p>`;
+                    <div class="project-body">
+                        <div class="tags">
+                            ${project.tags.map(tag => `<span>${tag}</span>`).join('')}
+                        </div>
+                        <h4>${project.title}</h4>
+                        <p>${project.desc}</p>
+                        <div class="project-links">
+                            <a href="${project.link}" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('') || `<p style="text-align:center;color:var(--text-muted);grid-column:1/-1;">No projects in this category yet.</p>`;
         }
 
         // ===== PAGE ROUTING =====
@@ -1470,6 +1322,7 @@
             }
         });
 
+        // ===== CONTACT FORM (Web3Forms) =====
         document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const form = e.target;
@@ -1480,13 +1333,15 @@
             btn.disabled = true;
 
             try {
-                const response = await fetch(form.action, {
+                const formData = new FormData(form);
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    body: new FormData(form),
-                    headers: { 'Accept': 'application/json' }
+                    body: formData
                 });
 
-                if (response.ok) {
+                const data = await response.json();
+
+                if (data.success) {
                     btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
                     btn.style.background = 'linear-gradient(135deg, #34c759, #28a745)';
                     form.reset();
@@ -1496,9 +1351,10 @@
                         btn.disabled = false;
                     }, 3000);
                 } else {
-                    throw new Error('Formspree error');
+                    throw new Error(data.message || 'Web3Forms error');
                 }
             } catch (error) {
+                console.error('Form submission error:', error);
                 btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Oops! Try again.';
                 btn.style.background = 'linear-gradient(135deg, #ff3b30, #dc2626)';
                 setTimeout(() => {
@@ -1529,7 +1385,8 @@
         renderProjects('all');
         navigateTo('home');
 
-        console.log('🍎 Apple-inspired portfolio loaded with favicon!');
+        console.log('🍎 Apple-inspired portfolio loaded with Web3Forms!');
+        console.log('📧 Web3Forms access key set.');
     </script>
 </body>
 </html>
