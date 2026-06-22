@@ -335,7 +335,6 @@
         .hero-content p,
         .about-text p,
         .project-card .project-body p,
-        .testimonial-card blockquote,
         .contact-info p {
             text-align: justify;
             text-justify: inter-word;
@@ -817,75 +816,6 @@
             color: var(--accent);
         }
 
-        /* ===== TESTIMONIALS PAGE ===== */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 28px;
-        }
-
-        .testimonial-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 32px 28px;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .testimonial-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .testimonial-card .stars {
-            color: #ffb800;
-            font-size: 1rem;
-            margin-bottom: 14px;
-            letter-spacing: 2px;
-        }
-
-        .testimonial-card blockquote {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-bottom: 18px;
-            line-height: 1.8;
-            font-weight: 400;
-        }
-
-        .testimonial-card .author {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .testimonial-card .author .avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--accent-gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #fff;
-        }
-
-        .testimonial-card .author .info h5 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .testimonial-card .author .info p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
         /* ===== CONTACT PAGE ===== */
         .contact-wrapper {
             display: grid;
@@ -1166,7 +1096,6 @@
                 <li><a data-page="about">About</a></li>
                 <li><a data-page="skills">Skills</a></li>
                 <li><a data-page="projects">Projects</a></li>
-                <li><a data-page="testimonials">Testimonials</a></li>
                 <li><a data-page="contact">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -1315,20 +1244,6 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS PAGE -->
-    <section class="page" id="page-testimonials" style="background: var(--bg-secondary);">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge">Testimonials</span>
-                <h2>What People Say</h2>
-                <p>Feedback from peers and mentors.</p>
-            </div>
-            <div class="testimonials-grid" id="testimonialsGrid">
-                <!-- Injected by JS -->
-            </div>
-        </div>
-    </section>
-
     <!-- CONTACT PAGE -->
     <section class="page" id="page-contact">
         <div class="container">
@@ -1402,18 +1317,18 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // ===== UPDATED SKILLS DATA =====
+        // ===== SKILLS DATA =====
         const skillsData = [
             { name: 'Using AI Tools', icon: 'fas fa-robot', level: 80 },
             { name: 'Web Design (No‑Code + AI)', icon: 'fas fa-paint-brush', level: 95 },
             { name: 'Public Speaking & Presentations', icon: 'fas fa-microphone', level: 90 },
             { name: 'Essay Writing & Research', icon: 'fas fa-pen-fancy', level: 75 },
             { name: 'Team Collaboration & Leadership', icon: 'fas fa-people-arrows', level: 95 },
-            { name: 'Speed Typing ', icon: 'fas fa-keyboard', level: 90 },
+            { name: 'Speed Typing', icon: 'fas fa-keyboard', level: 90 },
             { name: 'Problem Solving & Critical Thinking', icon: 'fas fa-lightbulb', level: 70 }
         ];
 
-        // Only Web Design category has projects (AI & Cyber, Mechatronics, and Health Tech remain empty)
+        // ===== PROJECTS DATA =====
         const projectsData = [
             {
                 title: 'Panilkanda Tea Factory Machine Tracker',
@@ -1432,30 +1347,6 @@
                 icon: 'fas fa-user-astronaut',
                 link: 'https://ilovenyc-stealth.github.io/Minuka-Portfolio/',
                 github: '#'
-            }
-        ];
-
-        const testimonialsData = [
-            {
-                name: 'Dr. Priya Fernando',
-                role: 'Lecturer, ANC',
-                avatar: 'PF',
-                text: 'Minuka consistently demonstrates a strong grasp of complex concepts and an eagerness to explore innovative applications. A brilliant student with a bright future.',
-                stars: 5
-            },
-            {
-                name: 'Ravindu Perera',
-                role: 'Fellow Student & Project Partner',
-                avatar: 'RP',
-                text: 'Working with Minuka on our AI project was a great experience. His communication skills and ability to bring ideas to life are exceptional.',
-                stars: 5
-            },
-            {
-                name: 'Sarah De Silva',
-                role: 'Mentor, Tech Startup Hub',
-                avatar: 'SD',
-                text: 'Minuka\'s passion for using technology to solve healthcare problems is inspiring. He has a unique ability to bridge technical depth with user‑centric design.',
-                stars: 5
             }
         ];
 
@@ -1511,25 +1402,6 @@
                         </div>
                     </div>
                 `).join('') || `<p style="text-align:center;color:var(--text-muted);grid-column:1/-1;">No projects in this category yet.</p>`;
-        }
-
-        function renderTestimonials() {
-            const grid = document.getElementById('testimonialsGrid');
-            grid.innerHTML = testimonialsData.map((t, index) => `
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            ${'★'.repeat(t.stars)}${'☆'.repeat(5 - t.stars)}
-                        </div>
-                        <blockquote>“${t.text}”</blockquote>
-                        <div class="author">
-                            <div class="avatar">${t.avatar}</div>
-                            <div class="info">
-                                <h5>${t.name}</h5>
-                                <p>${t.role}</p>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
         }
 
         // ===== PAGE ROUTING =====
@@ -1623,10 +1495,9 @@
         // ===== INIT =====
         renderSkills();
         renderProjects('all');
-        renderTestimonials();
         navigateTo('home');
 
-        console.log('🍎 Apple-inspired portfolio loaded with updated skills!');
+        console.log('🍎 Apple-inspired portfolio loaded – no testimonials tab.');
     </script>
 </body>
 </html>
