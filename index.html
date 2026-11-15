@@ -283,7 +283,8 @@
         .hero-content p,
         .about-text p,
         .project-card .project-body p,
-        .contact-info p {
+        .contact-info p,
+        .research-card p {
             text-align: justify;
             text-justify: inter-word;
             hyphens: auto;
@@ -639,6 +640,53 @@
             font-weight: 400;
         }
 
+        /* ===== RESEARCH ===== */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 10px;
+        }
+
+        .research-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 32px 26px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .research-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .research-card .research-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .research-card h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .research-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 400;
+            flex: 1;
+        }
+
         /* ===== PROJECTS ===== */
         .project-filters {
             display: flex;
@@ -968,6 +1016,7 @@
                 <li><a class="active" data-page="home">Home</a></li>
                 <li><a data-page="about">About</a></li>
                 <li><a data-page="skills">Skills</a></li>
+                <li><a data-page="research">Research</a></li>
                 <li><a data-page="projects">Projects</a></li>
                 <li><a data-page="contact">Contact</a></li>
             </ul>
@@ -990,8 +1039,9 @@
                     <h1>Minuka <span class="highlight">Uduwana</span></h1>
                     <p>
                         A 23-year-old Pearson BTEC HND Computing student at <strong>American National College (ANC)</strong>, Sri Lanka.
-                        Passionate about <strong>AI/ML, Electronics, Futuristic Mechatronics</strong> and creating innovative solutions
-                        for the digital environment while tackling real‑world healthcare challenges.
+                        Experienced in <strong>sales and developing web applications</strong>, with a deep passion for
+                        <strong>AI/ML in Healthcare, Electronics, and Futuristic Mechatronics</strong> — creating innovative
+                        solutions for the digital environment and real‑world challenges.
                     </p>
                     <div class="hero-buttons">
                         <a class="btn" data-page="projects"><i class="fas fa-rocket"></i> View My Work</a>
@@ -1007,8 +1057,8 @@
                             <p>Projects Built</p>
                         </div>
                         <div class="stat">
-                            <h3>3+</h3>
-                            <p>Team Collaborations</p>
+                            <h3>1+</h3>
+                            <p>Team Collaboration</p>
                         </div>
                     </div>
                 </div>
@@ -1023,7 +1073,7 @@
                             <i class="fas fa-user-astronaut fallback-icon"></i>
                         </div>
                         <div class="floating-badge">
-                            <i class="fas fa-brain"></i> AI & Cyber
+                            <i class="fas fa-brain"></i> AI &amp; ML
                         </div>
                         <div class="floating-badge">
                             <i class="fas fa-robot"></i> Mechatronics
@@ -1049,7 +1099,7 @@
                         I'm <strong>Minuka Sejitha Uduwana</strong>, currently in my second semester of the <strong>Pearson BTEC HND</strong> program in Computer Science at American National College, Colombo. I also hold a <strong>Pearson Foundation</strong> in Computer Science and a <strong>Pearson Diploma</strong> in English. I'm deeply passionate about <strong>AI, Cybersecurity, and Futuristic Mechatronics</strong> — with a mission to create innovative solutions for the digital environment and tackle real‑world healthcare challenges through technology.
                     </p>
                     <p>
-                        Beyond coding, I thrive in collaborative environments — I excel at <strong>public speaking, essay writing, and am a dedicated team player</strong>. I love no‑code web design and use AI to accelerate my workflow. My ultimate goal is to merge <strong>futuristic mechatronics</strong> with intelligent software to create meaningful impact in both digital and healthcare spaces.
+                        Beyond coding, I thrive in collaborative environments — I'm a dedicated team player with a strong drive for sales and web application development. I love no‑code web design and use AI to accelerate my workflow. My ultimate goal is to merge <strong>futuristic mechatronics</strong> with intelligent software to create meaningful impact in both digital and healthcare spaces.
                     </p>
                     <div class="social-links">
                         <a href="https://github.com/ilovenyc-stealth" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -1077,11 +1127,6 @@
                         <h4>Western Music</h4>
                         <p>&amp; Speech</p>
                     </div>
-                    <div class="about-stat-card">
-                        <i class="fas fa-microphone-alt"></i>
-                        <h4>Public Speaking</h4>
-                        <p>Confident &amp; Clear</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1093,9 +1138,23 @@
             <div class="section-header">
                 <span class="badge">Skills</span>
                 <h2>My Toolbox</h2>
-                <p>Technical & soft skills I bring to every project.</p>
+                <p>Technical &amp; soft skills I bring to every project.</p>
             </div>
             <div class="skills-grid" id="skillsGrid">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="page" id="page-research">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Research Interests</span>
+                <h2>What Drives Me</h2>
+                <p>Areas of technology I'm deeply curious about and actively exploring.</p>
+            </div>
+            <div class="research-grid" id="researchGrid">
                 <!-- Injected by JS -->
             </div>
         </div>
@@ -1111,10 +1170,10 @@
             </div>
             <div class="project-filters" id="projectFilters">
                 <button class="active" data-filter="all">All</button>
-                <button data-filter="ai">AI & Cyber</button>
+                <button data-filter="ai">AI/ML</button>
                 <button data-filter="mech">Mechatronics</button>
                 <button data-filter="health">Health Tech</button>
-                <button data-filter="web">Web Design</button>
+                <button data-filter="web">Web Design/Software</button>
             </div>
             <div class="projects-grid" id="projectsGrid">
                 <!-- Injected by JS -->
@@ -1160,7 +1219,7 @@
                     </div>
                 </div>
 
-                <!-- ===== WEB3FORMS CONTACT FORM (KEY UPDATED) ===== -->
+                <!-- ===== WEB3FORMS CONTACT FORM ===== -->
                 <form class="contact-form" id="contactForm" method="POST">
                     <!-- Web3Forms access key -->
                     <input type="hidden" name="access_key" value="dba6f6d4-1806-4963-ac1e-2a996fee0849" />
@@ -1203,13 +1262,30 @@
     <script>
         // ===== SKILLS DATA =====
         const skillsData = [
-            { name: 'Using AI Tools', icon: 'fas fa-robot', level: 80 },
-            { name: 'Web Design (No‑Code + AI)', icon: 'fas fa-paint-brush', level: 95 },
-            { name: 'Public Speaking & Presentations', icon: 'fas fa-microphone', level: 90 },
-            { name: 'Essay Writing & Research', icon: 'fas fa-pen-fancy', level: 75 },
-            { name: 'Team Collaboration & Leadership', icon: 'fas fa-people-arrows', level: 95 },
-            { name: 'Speed Typing', icon: 'fas fa-keyboard', level: 90 },
-            { name: 'Problem Solving & Critical Thinking', icon: 'fas fa-lightbulb', level: 70 }
+            { name: 'Communication Skills', desc: 'Demonstration of Presentation and Speeches', icon: 'fas fa-microphone', level: 90 },
+            { name: 'Technical Curiosity', desc: 'Started searching for electronic components and what they\'re for', icon: 'fas fa-microchip', level: 85 },
+            { name: 'Problem Solving', desc: 'Identified a difficulty in managing the inventory manually at Alphatronic SL', icon: 'fas fa-lightbulb', level: 80 },
+            { name: 'Entrepreneurial Thinking', desc: 'Selling a QR based asset management system for the Panilkanda Tea Factory, SL', icon: 'fas fa-chart-line', level: 85 },
+            { name: 'Self Learning', desc: 'Keeping the components unorderly will drag down the staff\'s time efficiency at Alphatronic SL and arrange them orderly', icon: 'fas fa-book-open', level: 90 }
+        ];
+
+        // ===== RESEARCH DATA =====
+        const researchData = [
+            {
+                title: 'AI/ML in Healthcare',
+                desc: 'Exploring how artificial intelligence and machine learning can revolutionize diagnostics, patient care, and predictive analytics in the healthcare sector — especially in resource-constrained environments like Sri Lanka.',
+                icon: 'fas fa-heartbeat'
+            },
+            {
+                title: 'Electronics',
+                desc: 'Investigating modern electronic components, embedded systems, and sensor technologies that bridge the physical and digital worlds — from microcontrollers to advanced circuitry.',
+                icon: 'fas fa-bolt'
+            },
+            {
+                title: 'Futuristic Mechatronics',
+                desc: 'Merging mechanical engineering, electronics, and intelligent software to design next-generation robotic systems that automate complex tasks and improve quality of life.',
+                icon: 'fas fa-robot'
+            }
         ];
 
         // ===== PROJECTS DATA =====
@@ -1231,6 +1307,15 @@
                 icon: 'fas fa-user-astronaut',
                 link: 'https://ilovenyc-stealth.github.io/Minuka-Portfolio/',
                 github: '#'
+            },
+            {
+                title: 'AlphaTronic Assets',
+                desc: 'An inventory and asset management solution built for AlphaTronic SL to streamline component tracking, ordering, and workspace organization.',
+                category: 'web',
+                tags: ['Asset Management', 'Inventory', 'Web App'],
+                icon: 'fas fa-boxes',
+                link: '#',
+                github: '#'
             }
         ];
 
@@ -1243,6 +1328,7 @@
                         <i class="${skill.icon}"></i>
                         <h4>${skill.name}</h4>
                     </div>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 14px; line-height: 1.6;">${skill.desc}</p>
                     <div class="skill-bar">
                         <div class="fill" data-level="${skill.level}" style="width: 0%;"></div>
                     </div>
@@ -1258,6 +1344,17 @@
                     bar.style.width = level + '%';
                 });
             }, 400);
+        }
+
+        function renderResearch() {
+            const grid = document.getElementById('researchGrid');
+            grid.innerHTML = researchData.map((item, index) => `
+                <div class="research-card">
+                    <div class="research-icon"><i class="${item.icon}"></i></div>
+                    <h4>${item.title}</h4>
+                    <p>${item.desc}</p>
+                </div>
+            `).join('');
         }
 
         function renderProjects(filter = 'all') {
@@ -1382,6 +1479,7 @@
 
         // ===== INIT =====
         renderSkills();
+        renderResearch();
         renderProjects('all');
         navigateTo('home');
 
